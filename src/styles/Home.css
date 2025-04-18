@@ -131,3 +131,84 @@ body {
     position: fixed;
     z-index: 1000;
 }
+
+/* Social links styles */
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.social-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 49, 49, 0.3);
+    background: rgba(15, 15, 15, 0.9);
+    color: #fff;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-button:hover {
+    border-color: #ff3131;
+    box-shadow: 0 0 15px rgba(255, 49, 49, 0.4);
+}
+
+.github:hover {
+    color: #fff;
+    background: #24292e;
+}
+
+.linkedin:hover {
+    color: #fff;
+    background: #0077b5;
+}
+
+.whatsapp:hover {
+    color: #fff;
+    background: #25D366;
+}
+
+.resume-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #ff3131;
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.resume-button:hover {
+    background: #ff4545;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 49, 49, 0.4);
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        gap: 15px;
+    }
+
+    .social-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+
+    .resume-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
