@@ -1,54 +1,62 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
+import { FaHome, FaUser, FaCode, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 import "../styles/Navbar.css";
-import logo from "../images/logo.jpg";
 
 function Navbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const location = useLocation();
 
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
-            setIsMenuOpen(false);
         } else if (location.pathname !== '/') {
-            // If section not found and not on home page, first navigate to home
             window.location.href = '/#' + sectionId;
         }
     };
 
-    // Listen for hash changes to scroll to section after navigation
-    useEffect(() => {
-        const hash = window.location.hash.replace('#', '');
-        if (hash) {
-            setTimeout(() => {
-                const element = document.getElementById(hash);
-                element?.scrollIntoView({ behavior: 'smooth' });
-            }, 100);
-        }
-    }, [location]);
-
     return (
-        <nav className="navbar">
-            <div className="navbar__logo">
-                <img src={logo} alt="Logo" />
-            </div>
-            <div className="navbar__menu-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div className={`navbar_routes ${isMenuOpen ? 'active' : ''}`}>
-                <ul>
-                    <li><button onClick={() => scrollToSection('home')}>Home</button></li>
-                    <li><button onClick={() => scrollToSection('about')}>About</button></li>
-                    <li><button onClick={() => scrollToSection('skills')}>Skills</button></li>
-                    <li><button onClick={() => scrollToSection('projects')}>Projects</button></li>
-                    <li><button onClick={() => scrollToSection('contact')}>Contact</button></li>
-                </ul>
-            </div>
-        </nav>
+        <>
+            {/* Desktop Navbar */}
+            <nav className="desktop-navbar">
+                <div className="navbar-content">
+                    <div className="navbar-logo">
+                        <span>N</span>
+                    </div>
+                    <div className="navbar-links">
+                        <button onClick={() => scrollToSection('home')}>Home</button>
+                        <button onClick={() => scrollToSection('about')}>About</button>
+                        <button onClick={() => scrollToSection('skills')}>Skills</button>
+                        <button onClick={() => scrollToSection('projects')}>Projects</button>
+                        <button onClick={() => scrollToSection('contact')}>Contact</button>
+                    </div>
+                </div>
+            </nav>
+
+            {/* Mobile Dock */}
+            <nav className="mobile-dock">
+                <button onClick={() => scrollToSection('home')} className="dock-item">
+                    <FaHome />
+                    <span>Home</span>
+                </button>
+                <button onClick={() => scrollToSection('about')} className="dock-item">
+                    <FaUser />
+                    <span>About</span>
+                </button>
+                <button onClick={() => scrollToSection('skills')} className="dock-item">
+                    <FaCode />
+                    <span>Skills</span>
+                </button>
+                <button onClick={() => scrollToSection('projects')} className="dock-item">
+                    <FaProjectDiagram />
+                    <span>Projects</span>
+                </button>
+                <button onClick={() => scrollToSection('contact')} className="dock-item">
+                    <FaEnvelope />
+                    <span>Contact</span>
+                </button>
+            </nav>
+        </>
     );
 }
 
