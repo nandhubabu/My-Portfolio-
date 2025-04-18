@@ -66,7 +66,7 @@ const About = () => {
       )}
       <div className="about-container">
         <div className="about-profile">
-          <img src="https://i.postimg.cc/W16N8ch1/IMG20241106130601-removebg-preview.png" alt="Profile" />
+          <img src={logo} alt="Profile" />
         </div>
         <div className="about-content">
           <h2>About Me</h2>
