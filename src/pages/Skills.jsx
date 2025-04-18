@@ -63,9 +63,9 @@ const Skills = () => {
       </motion.h2>
       <div className="skills-container">
         {[
-          { orbit: outerOrbit, className: 'outer-orbit', radius: 225, duration: 30 },
-          { orbit: middleOrbit, className: 'middle-orbit', radius: 175, duration: 25 },
-          { orbit: [...innerOrbit, centerIcon], className: 'inner-orbit', radius: 125, duration: 20 }
+          { orbit: outerOrbit, className: 'outer-orbit', radius: window.innerWidth <= 768 ? 150 : 225, duration: 30 },
+          { orbit: middleOrbit, className: 'middle-orbit', radius: window.innerWidth <= 768 ? 110 : 175, duration: 25 },
+          { orbit: [...innerOrbit, centerIcon], className: 'inner-orbit', radius: window.innerWidth <= 768 ? 70 : 125, duration: 20 }
         ].map((orbitData, orbitIndex) => (
           <motion.div 
             key={orbitIndex}
