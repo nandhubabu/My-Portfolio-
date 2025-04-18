@@ -1,0 +1,133 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f0f;
+    color: white;
+    overflow-x: hidden;
+}
+
+.home-wrapper {
+    position: relative;
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    overflow: hidden;
+}
+
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    pointer-events: none;
+    mask-image: radial-gradient(600px circle at center, white, transparent);
+    -webkit-mask-image: radial-gradient(600px circle at center, white, transparent);
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.home {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.home__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+}
+
+.home__content > div:nth-child(1) {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ff3131;
+}
+
+.home__content > div:nth-child(2) {
+    font-size: 2.5rem;
+    color: #ffffff;
+}
+
+.home__content > div:nth-child(3) {
+    font-size: 1.2rem;
+    color: #cccccc;
+    line-height: 1.6;
+}
+
+/* Animation text styles */
+.home__content span {
+    display: inline-block;
+    margin-right: 0.25em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive text */
+@media (max-width: 768px) {
+    .home__content > div:nth-child(1) {
+        font-size: 2.2rem;
+    }
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff3131;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #e60000;
+    transform: scale(1.05);
+}
+
+/* Update z-index for navbar */
+.navbar {
+    position: fixed;
+    z-index: 1000;
+}

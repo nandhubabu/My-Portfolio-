@@ -1,0 +1,188 @@
+.skills-section {
+    min-height: 100vh;
+    background-color: #0f0f0f;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ff3131;
+    text-shadow: 0 0 10px rgba(97, 218, 251, 0.3);
+}
+
+.skills-container {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 0 auto;
+}
+
+.center-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    padding: 15px;
+    border-radius: 50%;
+    background: rgba(97, 218, 251, 0.1);
+}
+
+.orbit-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.outer-orbit {
+    width: 450px;
+    height: 450px;
+    animation: rotate 30s linear infinite;
+}
+
+.middle-orbit {
+    width: 350px;
+    height: 350px;
+    animation: rotate-reverse 25s linear infinite;
+}
+
+.inner-orbit {
+    width: 250px;
+    height: 250px;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: translate(-50%, -50%) rotate(0deg) translateZ(0); }
+    to { transform: translate(-50%, -50%) rotate(360deg) translateZ(0); }
+}
+
+@keyframes rotate-reverse {
+    from { transform: translate(-50%, -50%) rotate(360deg) translateZ(0); }
+    to { transform: translate(-50%, -50%) rotate(0deg) translateZ(0); }
+}
+
+.skill-icon {
+    position: absolute;
+    transform-origin: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 50%;
+    background: rgba(15, 15, 15, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+}
+
+/* Specific skill backgrounds */
+.skill-icon[data-skill="React"] { 
+    background: rgba(97, 218, 251, 0.1);
+    border-color: rgba(97, 218, 251, 0.3);
+}
+.skill-icon[data-skill="JavaScript"] { 
+    background: rgba(247, 223, 30, 0.1);
+    border-color: rgba(247, 223, 30, 0.3);
+}
+.skill-icon[data-skill="TypeScript"] { 
+    background: rgba(49, 120, 198, 0.1);
+    border-color: rgba(49, 120, 198, 0.3);
+}
+.skill-icon[data-skill="HTML5"] { 
+    background: rgba(227, 79, 38, 0.1);
+    border-color: rgba(227, 79, 38, 0.3);
+}
+.skill-icon[data-skill="CSS3"] { 
+    background: rgba(21, 114, 182, 0.1);
+    border-color: rgba(21, 114, 182, 0.3);
+}
+.skill-icon[data-skill="Node.js"] { 
+    background: rgba(51, 153, 51, 0.1);
+    border-color: rgba(51, 153, 51, 0.3);
+}
+.skill-icon[data-skill="Python"] { 
+    background: rgba(55, 118, 171, 0.1);
+    border-color: rgba(55, 118, 171, 0.3);
+}
+.skill-icon[data-skill="MongoDB"] { 
+    background: rgba(71, 162, 72, 0.1);
+    border-color: rgba(71, 162, 72, 0.3);
+}
+.skill-icon[data-skill="Git"] { 
+    background: rgba(240, 80, 50, 0.1);
+    border-color: rgba(240, 80, 50, 0.3);
+}
+.skill-icon[data-skill="AWS"] { 
+    background: rgba(255, 153, 0, 0.1);
+    border-color: rgba(255, 153, 0, 0.3);
+}
+
+.skill-icon:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 15px currentColor);
+    z-index: 5;
+    background: rgba(15, 15, 15, 0.95);
+}
+
+.skill-name {
+    position: absolute;
+    bottom: -25px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.skill-icon:hover .skill-name {
+    opacity: 1;
+}
+
+.react-icon {
+    z-index: 2;
+    background: rgba(97, 218, 251, 0.1);
+    padding: 10px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 10px rgba(97, 218, 251, 0.3));
+}
+
+.react-icon:hover {
+    filter: drop-shadow(0 0 15px rgba(97, 218, 251, 0.5));
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        transform: scale(0.6);
+        margin-top: -50px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+}

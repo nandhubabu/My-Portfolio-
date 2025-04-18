@@ -1,0 +1,178 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background-color: rgba(15, 15, 15, 0.8); /* Semi-transparent background */
+  backdrop-filter: blur(8px); /* Adds a blur effect */
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 4px rgba(255, 49, 49, 0.2);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar__logo {
+  height: 50px;
+  width: 50px;
+}
+
+.navbar__logo img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+  transition: transform 0.3s ease;
+}
+
+.navbar__logo img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 49, 49, 0.3);
+}
+
+/* Hamburger Menu */
+.navbar__menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.navbar__menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Nav links */
+.navbar_routes {
+  display: flex;
+}
+
+.navbar_routes ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar_routes ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding: 5px;
+  transition: color 0.3s ease;
+}
+
+.navbar_routes ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background: red;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar_routes ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.navbar_routes ul li a:hover {
+  color: red;
+}
+
+.navbar_routes button {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar_routes button::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #ff3131;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar_routes button:hover {
+  color: #ff3131;
+}
+
+.navbar_routes button:hover::after {
+  width: 100%;
+}
+
+/* Animation for mobile menu */
+.navbar_routes.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar__menu-toggle {
+    display: flex;
+  }
+
+  .navbar_routes {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background-color: #0f0f0f;
+    padding: 1rem;
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(255, 49, 49, 0.2);
+  }
+
+  .navbar_routes.active {
+    transform: translateY(0);
+  }
+
+  .navbar_routes ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar_routes button {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .navbar__menu-toggle span {
+    background-color: #ff3131;
+  }
+}
