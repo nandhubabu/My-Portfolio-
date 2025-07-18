@@ -34,11 +34,11 @@ const Home = () => {
           </TextAnimate>
           
           <TextAnimate animation="slideUp" by="word">
-            Web Developer & Tech Enthusiast
+            Software Developer & Tech Enthusiast
           </TextAnimate>
           
           <TextAnimate animation="slideUp" by="word">
-            I build clean, functional, and responsive websites.
+            I build clean, functional, and responsive projects.
           </TextAnimate>
 
           <motion.div 

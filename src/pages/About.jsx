@@ -70,18 +70,21 @@ const About = () => {
         </div>
         <div className="about-content">
           <h2>About Me</h2>
-          <p>
-            I'm Nandhu, a passionate and curious Computer Science student with strong foundations in both software development and hardware-based systems. I enjoy building practical, real-world projects that merge intelligent software with connected hardware, and I'm always eager to explore new technologies and innovative ideas.
+          {/* Desktop/Laptop view */}
+          <p className="about-text desktop-only">
+            I'm Nandhu, a passionate and curious Computer Science student with strong foundations in both software development and hardware-based systems. I enjoy building practical, real-world projects that merge intelligent software with connected hardware, and I'm always eager to explore new technologies and innovative ideas. My experience includes web development using Flask, Express.js, MongoDB, and React, as well as exploring AI, Machine Learning, and Deep Learning with Python, Google Colab, Hugging Face, and Gemini APIs. I've worked on projects such as news aggregation with AI summarization, authentication systems, and integrating AI models with web applications. On the hardware side, I've worked with ESP32, Arduino Uno and Nano, and Raspberry Pi, integrating sensors and actuators for IoT automation, real-time sensor data transmission, and remote device control using Flask APIs. I'm also interested in edge AI, TinyML, robotics, combining electronics and AI in meaningful ways. I believe in learning by doing, and my goal is to build smart systems that solve real-world problems efficiently and creatively.
           </p>
-          <p>
-            On the software side, I have hands-on experience in web development using Flask, Express.js, MongoDB, and React, and I'm continuously learning to create full-stack applications. I'm also exploring AI, Machine Learning, and Deep Learning, using tools like Python, Google Colab, and LangChain with Hugging Face and Gemini APIs. I've worked on projects involving news aggregation with AI summarization, authentication systems, and AI model integration with web apps.
-          </p>
-          <p>
-            On the hardware side, I've worked with devices like the ESP32, Arduino Uno and Nano, and Raspberry Pi, integrating various sensors and actuators. My projects include IoT-based automation, real-time sensor data transmission to web servers, and remote control of devices using Flask APIs. I'm also diving into areas like edge AI, TinyML, robotics, and signal sniffing, combining electronics and AI in meaningful ways.
-          </p>
-          <p>
-            I believe in learning by doing, and my goal is to build smart systems that solve real-world problems efficiently and creatively.
-          </p>
+          {/* Mobile view */}
+          <ul className="about-list mobile-only">
+            <li>Computer Science student passionate about software and hardware.</li>
+            <li>Enjoys building practical, real-world projects.</li>
+            <li>Experienced in Flask, Express.js, MongoDB, React.</li>
+            <li>Works with AI, ML, Deep Learning (Python, Colab, Hugging Face, Gemini APIs).</li>
+            <li>Projects: news aggregation, authentication, AI model integration.</li>
+            <li>Hardware: ESP32, Arduino, Raspberry Pi, IoT automation.</li>
+            <li>Interested in edge AI, TinyML, robotics.</li>
+            <li>Believes in learning by doing and solving real-world problems.</li>
+          </ul>
         </div>
       </div>
     </section>

@@ -100,6 +100,14 @@ const RenderIcon = ({ skill, index, total, radius }) => {
   const x = radius * Math.cos(angle);
   const y = radius * Math.sin(angle);
 
+  // Responsive icon size - increased for mobile and tablet
+  let iconSize = 35;
+  if (window.innerWidth <= 480) {
+    iconSize = 70; // Mobile (was 50)
+  } else if (window.innerWidth <= 900) {
+    iconSize = 55; // Tablet (was 42)
+  }
+
   return (
     <motion.div
       className="skill-icon"
@@ -116,7 +124,7 @@ const RenderIcon = ({ skill, index, total, radius }) => {
         delay: index * 0.1
       }}
     >
-      <skill.icon size={35} color={skill.color} />
+      <skill.icon size={iconSize} color={skill.color} />
       <span className="skill-name">{skill.name}</span>
     </motion.div>
   );

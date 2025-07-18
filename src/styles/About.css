@@ -53,6 +53,24 @@
     color: #cccccc;
 }
 
+.desktop-only {
+  display: block;
+}
+.mobile-only {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+    padding-left: 1.2em;
+    margin-top: 0.5em;
+  }
+}
+
 @media (max-width: 768px) {
     .about-container {
         grid-template-columns: 1fr;
