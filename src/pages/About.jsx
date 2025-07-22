@@ -2,7 +2,6 @@ import React, { useCallback, useState } from "react";
 import Particles from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import "../styles/About.css";
-import logo from "../images/logo.jpg";
 
 const About = () => {
   const [initialized, setInitialized] = useState(false);
@@ -66,7 +65,10 @@ const About = () => {
       )}
       <div className="about-container">
         <div className="about-profile">
-          <img src={logo} alt="Profile" />
+          <img
+            src="https://i.ibb.co/Xrg24NLC/IMG20241106130601-removebg-preview-removebg-preview-1.png"
+            alt="Profile"
+          />
         </div>
         <div className="about-content">
           <h2>About Me</h2>
