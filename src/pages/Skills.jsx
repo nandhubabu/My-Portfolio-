@@ -105,7 +105,7 @@ const RenderIcon = ({ skill, index, total, radius }) => {
   if (window.innerWidth <= 480) {
     iconSize = 70; // Mobile (was 50)
   } else if (window.innerWidth <= 900) {
-    iconSize = 55; // Tablet (was 42)
+    iconSize = 65; // Larger for tablet
   }
 
   return (
