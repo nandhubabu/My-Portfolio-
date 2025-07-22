@@ -70,21 +70,9 @@ const About = () => {
         </div>
         <div className="about-content">
           <h2>About Me</h2>
-          {/* Desktop/Laptop view */}
-          <p className="about-text desktop-only">
-            I'm Nandhu, a passionate and curious Computer Science student with strong foundations in both software development and hardware-based systems. I enjoy building practical, real-world projects that merge intelligent software with connected hardware, and I'm always eager to explore new technologies and innovative ideas. My experience includes web development using Flask, Express.js, MongoDB, and React, as well as exploring AI, Machine Learning, and Deep Learning with Python, Google Colab, Hugging Face, and Gemini APIs. I've worked on projects such as news aggregation with AI summarization, authentication systems, and integrating AI models with web applications. On the hardware side, I've worked with ESP32, Arduino Uno and Nano, and Raspberry Pi, integrating sensors and actuators for IoT automation, real-time sensor data transmission, and remote device control using Flask APIs. I'm also interested in edge AI, TinyML, robotics, combining electronics and AI in meaningful ways. I believe in learning by doing, and my goal is to build smart systems that solve real-world problems efficiently and creatively.
+          <p className="about-text">
+            I'm Nandhu, a passionate Computer Science student with a strong foundation in software and hardware systems. I love building real-world projects that combine smart software with connected hardware, and I'm always exploring new technologies. My experience covers web development (Flask, Express.js, MongoDB, React) and AI/ML (Python, Google Colab, Hugging Face, Gemini APIs). I've built projects like news aggregation with AI, authentication systems, and AI model integration for web apps. On the hardware side, I've worked with ESP32, Arduino, and Raspberry Pi for IoT automation, sensor data, and remote device control. I'm also interested in edge AI, TinyML, and robotics. I believe in learning by doing and aim to create smart systems that solve real proble ms efficiently.
           </p>
-          {/* Mobile view */}
-          <ul className="about-list mobile-only">
-            <li>Computer Science student passionate about software and hardware.</li>
-            <li>Enjoys building practical, real-world projects.</li>
-            <li>Experienced in Flask, Express.js, MongoDB, React.</li>
-            <li>Works with AI, ML, Deep Learning (Python, Colab, Hugging Face, Gemini APIs).</li>
-            <li>Projects: news aggregation, authentication, AI model integration.</li>
-            <li>Hardware: ESP32, Arduino, Raspberry Pi, IoT automation.</li>
-            <li>Interested in edge AI, TinyML, robotics.</li>
-            <li>Believes in learning by doing and solving real-world problems.</li>
-          </ul>
         </div>
       </div>
     </section>
