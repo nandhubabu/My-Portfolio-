@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { FaHome, FaUser, FaCode, FaProjectDiagram, FaEnvelope } from "react-icons/fa";
 import "../styles/Navbar.css";
 
@@ -21,7 +21,9 @@ function Navbar() {
             <nav className="desktop-navbar">
                 <div className="navbar-content">
                     <div className="navbar-logo">
-                        <span>N</span>
+                        <Link to="/">
+                            {/* Removed SVG/logo, just leave empty or add your site name if needed */}
+                        </Link>
                     </div>
                     <div className="navbar-links">
                         <button onClick={() => scrollToSection('home')}>Home</button>

@@ -10,6 +10,8 @@
     position: relative;
     color: #fff;
     text-align: center;
+    padding-bottom: 1rem; /* or less */
+    margin-bottom: 0;
 }
 
 .section-title {
@@ -31,6 +33,8 @@
     transform-style: preserve-3d;
     perspective: 1000px;
     margin: 0 auto;
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 .center-icon {
@@ -175,6 +179,25 @@
 
 .react-icon:hover {
     filter: drop-shadow(0 0 15px rgba(97, 218, 251, 0.5));
+}
+
+.skill-icon svg {
+  width: 35px;
+  height: 35px;
+}
+
+@media (max-width: 900px) {
+  .skill-icon svg {
+    width: 65px;
+    height: 65px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-icon svg {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 @media screen and (max-width: 768px) {
